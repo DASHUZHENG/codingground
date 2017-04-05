@@ -113,7 +113,6 @@ class zEquation():
             return result
             #RK Result
 
-
     def VSPOLY():
         pass
 
@@ -167,7 +166,6 @@ class zEquation():
 
     def DNLCOSTD():
         pass
-
 
     #"POV":("PLXANT","CPLXP1", "CPLXP2", "CPIXP1","CPIXP2","CPIXP3","WAGNER","LNVPEQ","LNVP1", "LOGVP1", "LNPR1", "LOGPR1", "LNPR2", "LOGPR2","PLPO","PLTDEPOL","WAGNER25"),
     # POV ASPEN METHOD
@@ -224,7 +222,6 @@ class zEquation():
         pass
 
     #"HOV":("DHVLWT","DHVLDP","DHVLDS","DHVLPO","DHVLTDEW"),
-
     def DHVLWT():
         pass
 
@@ -246,10 +243,8 @@ class zEquation():
     def DHVLTDEW():
         pass
 
-
     #"SOLIDCP":("CPSPO1","CPSDIP","CPSXP1", "CPSXP2", "CPSXP7","CPSPO","CPSTMLPO"),
     # Solid CPSXP1-7
-
     def CPSPO1():
         pass
 
@@ -264,7 +259,6 @@ class zEquation():
     def CPSXP1():
         pass
 
-
     def CPSXP2():
         pass
 
@@ -278,7 +272,6 @@ class zEquation():
         pass
 
     #"LIQUIDCP":( "CPLDIP","CPLXP1, CPLXP2","CPLPDS","CPLPO","CPLIKC","CPLTMLPO","CPLTDECS"),
-
     def CPLDIP(self,para,temp,pres,p0=100000):
         if len(para)==8:
             result=self.Dippr(para,temp,pres,p0,"100")
@@ -296,7 +289,6 @@ class zEquation():
     def CPLPDS():
         pass
 
-
     def CPLIKC():
         pass
 
@@ -306,9 +298,7 @@ class zEquation():
     def CPLTDECS():
         pass
 
-
     #"GASCP":("CPIG","CPIGDP","CPIXP1","CPIXP2", "CPIXP3","CPIGDS","CPIAPI","CPIGPO","CPITMLPO","CPIALEE")
-
     def CPIG(self,para,temp,pres,p0=100000):
 
         if len(para)==12:
@@ -355,15 +345,11 @@ class zEquation():
     def CPIALEE():
         pass
 
-
     #"VIRIAL":(None,)}
-
     def VIRIAL():
         pass
 
-
     # All DIPPR
-
     def Dippr(self,para,temp,pres,p0=100000,tag="100"):
         #test阶段tc定义
         tc=673.15

@@ -62,7 +62,6 @@ class zProperty():
         #self._biset=[]
         #Activity did not belong to a Chemical's property
 
-
     def Basic_property_database(self,database="zPro.db",table="Basic"):
         self.bp={}
         #Use _bpset to load bp lib
@@ -134,7 +133,6 @@ class zProperty():
 
         return self.tpdata
 
-
     def Eos_set(self,eos="RK"):
         if eos in self._eoslist:
             self.eos=eos
@@ -149,7 +147,6 @@ class zProperty():
 
         return self.eos
 
-
     def Method_set(self,database,table="Routes",method='WIL-RK'):
 
         self.routes={}
@@ -161,7 +158,6 @@ class zProperty():
             self.routes[route]=db.Locate(database,table,method,route)[0]
 
         return self.routes
-    
 
 #Detail Calculation
 #T-dep Property
@@ -191,7 +187,6 @@ class zProperty():
             result=None
         return result
 
-
     def Pressure_of_saturation(self,temp,pres,p0=100000):
     #As a demo
         equation=zEquation()
@@ -215,7 +210,6 @@ class zProperty():
             result=None
         return result
 
-
     def Solid_cp(self,temp,pres,p0=100000):
         equation=zEquation()
         try:
@@ -233,7 +227,6 @@ class zProperty():
             print ("KeyWord:%s + %s\nMistake:%s\n"%("Liquid_cp",self.tpdata["LIQUIDCP"][0],error))
             result=None
         return result
-
 
     def Gas_cp(self,temp,pres,p0=100000):
         equation=zEquation()
@@ -323,7 +316,6 @@ class zProperty():
 
         return result
 
-
     def Hv(self,temp,pres,t0=298.15,p0=100000,route="2"):
 
         hbase=self.dhform
@@ -350,7 +342,6 @@ class zProperty():
 
         return result
 
-
     def Hl(self,temp,pres,t0=298.15,p0=100000,route="2",subroute="1"):
 
         hbase=self.dhform
@@ -375,7 +366,6 @@ class zProperty():
         result=hbase+htemp+hdeparture
 
         return result
-
 
     def Gv(self,temp,pres,t0=298.15,p0=100000,route="2",subroute="2"):
         if route=="1":
@@ -416,7 +406,6 @@ class zProperty():
 
         return result
 
-
     def Sv(self,temp,pres,t0=298.15,p0=100000,route="2"):
 
         if route=="1":
@@ -449,7 +438,6 @@ class zProperty():
 
         return result
 
-
     def Vv(self,temp,pres,t0=298.15,p0=100000):
         #No route definition for Vv
         equation=zEquation()
@@ -463,15 +451,11 @@ class zProperty():
 
         return result
 
-
-
     def Vl(self,temp,pres,p0=100000):
         #No rout definition for Vl
         result=self.Liquid_volume(temp,pres,p0=100000)
 
         return result
-
-
     #Solid is not included yet
     def Phis(self):
         pass
@@ -488,7 +472,6 @@ class zProperty():
     def Vs(self):
         pass
 
-
 # 计算中间属性
     def Sub_philpc(self,temp,p1,p2):
         try:
@@ -504,7 +487,6 @@ class zProperty():
             result=1
 
         return result
-
 
     def Sub_dhv(self,temp,pres,t0=298.15,p0=100000,route="2",step=100):
         #3 routes, 2 are same as ASPEN, 3 is programmed as Textbook
@@ -553,9 +535,6 @@ class zProperty():
         result=dhv
 
         return result
-
-
-
 
     def Sub_dhl(self,temp,pres,t0=298.15,p0=100000,route="1",step=1000):
         #No default p0 now! For integration
@@ -626,7 +605,6 @@ class zProperty():
             print("%s has dhl problem" % self.name)
 
         return result
-
 
     def Sub_dsv(self,temp,pres,t0=298.15,p0=100000,route="3"):#!NOW EDITING!!!
         equation=zEquation()
@@ -728,8 +706,6 @@ class zProperty():
 
         return eosintegrate
 
-
-
     def Sub_dgv(temp,pres,t0=298.15,p0=100000,route="2"):
         #Not yet
         if route=="1":
@@ -741,7 +717,6 @@ class zProperty():
 
 
         return result
-
 
     def Sub_dgl(temp,pres,t0=298.15,p0=100000,route="2"):
         #!Use phil not 2,not imbeded
@@ -756,13 +731,6 @@ class zProperty():
         elif route=="3":
             pass
         return result
-
-
-
-
-
-
-
 
 if __name__=="__main__":
     a=zProperty("H2O")
