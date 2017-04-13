@@ -1,0 +1,15 @@
+No,xlrd
+KeyWord:VIRIAL;
+Tdep_property_load error: cannot concatenate 'str' and 'NoneType' objects
+
+KeyWord:VIRIAL;
+Tdep_property_load error: cannot concatenate 'str' and 'NoneType' objects
+
+['H2O', 'ACETIC']
+['(H2O,H2O)', '(H2O,ACETIC)', '(ACETIC,H2O)', '(ACETIC,ACETIC)']
+{'H2O': <zChemical.zProperty instance at 0x7fc60a1397a0>, 'ACETIC': <zChemical.zProperty instance at 0x7fc60a139dd0>}
+{'H2O': 5, 'ACETIC': 5}
+Vvmx 13.7240639749
+Vlmx 0.0179138760932
+Phiv {'H2O': 1.0001531565510065, 'ACETIC': 1.0001531565510065}
+Phil {'H2O': 0.032088258714704075, 'ACETIC': 0.032088258714704075}
